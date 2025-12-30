@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Waste Predictor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍽️ Food Waste Predictor</h1>
+            <p>Smart predictions for canteen management</p>
+        </header>
+
+        <div class="card">
+            <h2>Enter Meal Details</h2>
+            <form id="predictionForm">
+                <div class="form-group">
+                    <label for="attendance">Expected Attendance</label>
+                    <input 
+                        type="number" 
+                        id="attendance" 
+                        placeholder="e.g., 150" 
+                        required
+                        min="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="menuType">Menu Type</label>
+                    <select id="menuType" required>
+                        <option value="">-- Select Menu Type --</option>
+                        <option value="veg">Vegetarian</option>
+                        <option value="nonveg">Non-Vegetarian</option>
+                        <option value="special">Special Event</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="foodQuantity">Food Quantity (kg)</label>
+                    <input 
+                        type="number" 
+                        id="foodQuantity" 
+                        placeholder="e.g., 50" 
+                        required
+                        min="1"
+                        step="0.1">
+                </div>
+
+                <button type="submit" class="btn">Get Prediction</button>
+            </form>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" class="card results-card" style="display: none;">
+            <h2>Prediction Results</h2>
+            
+            <div class="waste-level">
+                <p class="label">Waste Level:</p>
+                <span id="wasteLevel" class="badge">-</span>
+            </div>
+
+            <div class="waste-amount">
+                <p class="label">Estimated Waste:</p>
+                <p id="wasteAmount" class="value">-</p>
+            </div>
+
+            <div class="suggestion">
+                <p class="label">💡 Suggestion:</p>
+                <p id="suggestion" class="value">-</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
