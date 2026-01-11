@@ -4,9 +4,9 @@
 
 ### 1. Prerequisites
 
-Make sure you have:
-- **Node.js** v14 or higher ([Download](https://nodejs.org/))
-- **Git** (to clone the repository)
+7. Make sure you have:
+8. - **Node.js** v14 or higher ([Download](https://nodejs.org/))
+9. - **Git** (to clone the repository)
 
 ### 2. Clone the Repository
 
@@ -17,56 +17,42 @@ cd food-waste-predictor
 
 ### 3. Install Dependencies
 
+You need to install dependencies for **Backend** and **Frontend**.
+
+#### Node.js Dependencies
 ```bash
 cd backend
 npm install
+cd ../frontend
+npm install # (Optional, depending on frontend setup)
+cd ..
 ```
-
-Wait for the installation to complete. You should see a `node_modules` folder created.
 
 ### 4. Verify Installation
 
-Check that dependencies are installed:
+Check that Node.js modules are installed:
 ```bash
-npm list --depth=0
+ls backend/node_modules
 ```
 
-You should see:
-- express
-- cors
-- nodemon (dev dependency)
+Check Python dependencies:
+```bash
+pip freeze | grep -E "Flask|pandas|scikit-learn"
+```
 
 ### 5. Run the Application
 
-See [README.md](README.md) for running instructions, or use the quick start:
-
-**Windows:**
-```bash
-.\run.bat
-```
-
-**PowerShell:**
-```bash
-.\run.ps1
-```
-
-**Manual:**
-- Terminal 1: `cd backend && npm start`
-- Terminal 2: `cd frontend && node server.js`
-- Open: `http://localhost:8000`
+See [START.md](START.md) for detailed running instructions.
 
 ## What Gets Installed?
 
-- **express**: Web framework for the backend API
-- **cors**: Enables cross-origin requests
-- **nodemon**: Auto-restarts server during development (optional)
+- **Node.js**:
+    - **express**: Web framework for the backend API
+    - **cors**: Enables cross-origin requests
+    - **axios**: For calling the Python ML service
+- **Python**:
+    - **flask**: Runs the ML model as an API
+    - **pandas**: Data manipulation
+    - **scikit-learn**: Machine learning library
 
-## No Additional Setup Needed!
-
-✅ No API keys required  
-✅ No environment variables to set  
-✅ No external services to configure  
-✅ No database setup needed  
-
-Just install and run!
 

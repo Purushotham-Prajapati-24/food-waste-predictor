@@ -6,7 +6,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors()); // Enable CORS for frontend
+app.use(cors({
+    origin: '*', // Allow all origins for debugging
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type']
+}));
 app.use(express.json()); // Parse JSON request bodies
 
 // Routes

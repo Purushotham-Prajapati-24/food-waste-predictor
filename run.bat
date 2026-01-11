@@ -1,20 +1,23 @@
 @echo off
-echo Starting Food Waste Predictor...
+echo Starting Food Waste Predictor (Gemini-Powered)...
 echo.
+
 echo Step 1: Starting Backend Server...
 cd backend
-start "Backend Server" cmd /k "npm start"
+start "Backend Server (Port 5000)" cmd /k "npm start"
 timeout /t 3 /nobreak >nul
 echo.
+
 echo Step 2: Starting Frontend Server...
 cd ..\frontend
-start "Frontend Server" cmd /k "node server.js"
+start "Frontend Server (Port 8000)" cmd /k "node server.js"
 timeout /t 2 /nobreak >nul
 echo.
+
 echo ========================================
-echo Both servers are starting!
+echo All services are starting!
 echo.
-echo Backend: http://localhost:5000
+echo Backend:  http://localhost:5000
 echo Frontend: http://localhost:8000
 echo.
 echo Open http://localhost:8000 in your browser
